@@ -67,7 +67,7 @@ const galleryData = [
   },
   {
     id: 'startup_event',
-    title: 'STARTUP & EVENT CREATIVE',
+    title: 'EVENT CREATIVE',
     tag: '2-Page Event & Design Creative',
     pages: ['assets/images/screening strartitup.jpg', 'assets/images/design.jpg']
   },
