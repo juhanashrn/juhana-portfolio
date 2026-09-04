@@ -275,8 +275,93 @@ h1,h2,h3,h4{
 
 @media (max-width:900px){
   .hero{ padding-top:120px; }
-  .hero-grid{ grid-template-columns:1fr; }
-  .hero-visual{ order:-1; max-width:340px; margin-bottom:20px;}
+  .hero-grid{ grid-template-columns:1.15fr 1fr; gap:30px; }
+  .hero-visual{ order:0; max-width:340px; height:360px; margin:0 auto; }
+}
+
+/* ================= MOBILE HERO OVERRIDE (760px and below) ================= */
+@media (max-width:760px){
+  .hero{
+    padding:100px 0 50px;
+    min-height:auto;
+  }
+  .hero-grid{
+    grid-template-columns:minmax(0, 1fr) auto;
+    gap:clamp(10px, 2.5vw, 18px);
+    align-items:center;
+  }
+  .hero .hero-grid{
+    padding:0 16px;
+  }
+  .hero-visual{
+    order:0;
+    width:clamp(180px, 42vw, 220px);
+    height:clamp(180px, 42vw, 220px);
+    aspect-ratio:1/1;
+    max-width:220px;
+    margin:0;
+    align-self:center;
+    flex-shrink:0;
+  }
+  .hero-visual .hv-blob{
+    filter:blur(28px);
+  }
+  .hero-social{
+    gap:8px;
+    margin-bottom:clamp(14px, 3vw, 22px);
+  }
+  .hero-social .icon-btn{
+    width:32px;
+    height:32px;
+    border-radius:10px;
+  }
+  .hero-social .icon-btn svg{
+    width:14px;
+    height:14px;
+  }
+  .hero-hi{
+    font-size:clamp(0.78rem, 2.2vw, 0.92rem);
+    margin-bottom:clamp(6px, 1.5vw, 10px);
+  }
+  .hero-title{
+    font-size:clamp(1.2rem, 3.6vw, 1.75rem);
+    line-height:1.12;
+  }
+  .br-desktop{
+    display:none;
+  }
+  .hero-sub{
+    margin-top:clamp(8px, 2vw, 14px);
+    font-size:clamp(0.74rem, 2vw, 0.88rem);
+    line-height:1.45;
+    max-width:100%;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:clamp(14px, 3vw, 20px);
+  }
+  .hero-actions .btn{
+    padding:9px 14px;
+    font-size:0.78rem;
+    border-radius:10px;
+    gap:6px;
+  }
+}
+
+@media (max-width:360px){
+  .hero .hero-grid{
+    padding:0 10px;
+  }
+  .hero-visual{
+    width:clamp(160px, 46vw, 180px);
+    height:clamp(160px, 46vw, 180px);
+  }
+  .hero-actions .btn{
+    padding:8px 11px;
+    font-size:0.75rem;
+  }
 }
 
 /* ================= ABOUT ================= */
